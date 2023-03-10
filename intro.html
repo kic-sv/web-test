@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> -->
+    <link
+      rel="stylesheet prefetch"
+      href="https://gist.githubusercontent.com/mfd/614e2e80a22b878bde63cb471cbe677e/raw/eef2aabfd0d588d43285431186a0cf70305ceb80/sanfrancisco-font.css"
+    />
+    <title>KICSV소개</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Favicon-->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="assets/images/kicsv_favicon.png"
+    />
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css" />
+    <link rel="stylesheet" href="assets/css/templatemo-onix-digital.css" />
+    <link rel="stylesheet" href="assets/css/animated.css" />
+    <link rel="stylesheet" href="assets/css/owl.css" />
+    <link rel="stylesheet" href="assets/css/intro.css" />
+    <link rel="stylesheet" href="assets/css/service.css" />
+    <link rel="stylesheet" href="assets/css/program.css" />
+    <link rel="stylesheet" href="assets/css/partner.css" />
+    <link rel="stylesheet" href="assets/css/resource.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="assets/css/popup.css" />
+    <!--
+
+TemplateMo 565 Onix Digital
+
+https://templatemo.com/tm-565-onix-digital
+
+-->
+  </head>
+  <script>
+    // Acc
+    $(document).on("click", ".naccs .menu div", function () {
+      var numberIndex = $(this).index();
+
+      if (!$(this).is("active")) {
+        $(".naccs .menu div").removeClass("active");
+        $(".naccs ul li").removeClass("active");
+
+        $(this).addClass("active");
+        $(".naccs ul")
+          .find("li:eq(" + numberIndex + ")")
+          .addClass("active");
+
+        var listItemHeight = $(".naccs ul")
+          .find("li:eq(" + numberIndex + ")")
+          .innerHeight();
+        $(".naccs ul").height(listItemHeight + "px");
+      }
+    });
+
+    $("#modalButton").click(function () {
+      $("#EMPmodal").modal("hide");
+    });
+
+    $(document).ready(function () {
+      emailjs.init("ktAJwzbLF-tAkp_RQ");
+      //"user_xxxxx"이 부분은 사용자마다 다르니 반드시 emailJS의 installation 화면을 확인
+      $("input[name=submit]").click(function () {
+        alert("문의가 전달되었습니다.");
+
+        var templateParams = {
+          //각 요소는 emailJS에서 설정한 템플릿과 동일한 명으로 작성!
+          name: $("input[name=name]").val(),
+          email: $("input[name=email]").val(),
+          message: $("textarea[name=message]").val(),
+        };
+
+        emailjs
+          .send("service_py4k1av", "template_adoutoi", templateParams)
+          //emailjs.send('service ID', 'template ID', 보낼 내용이 담긴 객체)
+          .then(
+            function (response) {
+              console.log("SUCCESS!", response.status, response.text);
+            },
+            function (error) {
+              console.log("FAILED...", error);
+            }
+          );
+      });
+
+      $("#EMPmodal").modal("show");
+    });
+  </script>
+
+  <!-- ***** Preloader Start ***** -->
+  <!-- <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div> -->
+  <!-- ***** Preloader End ***** -->
+  <body>
+    <!-- ***** Header Area Start ***** -->
+    <header
+      class="header-area header-sticky"
+      data-wow-duration="0.75s"
+      data-wow-delay="0s"
+      style="position: sticky"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <nav class="main-nav">
+              <!-- ***** Logo Start ***** -->
+              <a href="index.html" class="logo">
+                <img src="assets/images/kicsv_logo.png" />
+              </a>
+              <!-- ***** Logo End ***** -->
+              <!-- ***** Menu Start ***** -->
+
+              <ul class="nav float-end">
+                <li class="scroll-to-section">
+                  <a href="./index.html">HOME</a>
+                </li>
+                <li class="scroll-to-section">
+                  <a href="./intro.html" class="active">KICSV소개</a>
+                </li>
+                <li class="scroll-to-section">
+                  <a href="./service.html">서비스</a>
+                </li>
+                <li claas="scroll-to-section">
+                  <a href="./program.html">프로그램</a>
+                </li>
+                <li claas="scroll-to-section">
+                  <a href="./partner.html">파트너</a>
+                </li>
+                <li claas="scroll-to-section">
+                  <a href="./resource.html">출장안내</a>
+                </li>
+                <!-- <li class="scroll-to-section"><a href="https://www.facebook.com/kicsv/"><i class="fa fa-facebook"></i></a></li>
+                        <li class="scroll-to-section"><a href="https://www.linkedin.com/in/kicsv/"><i class="fa fa-linkedin"></i></a></li> -->
+                <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                언어 변경
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">KOR</a>
+                <a class="dropdown-item" href="#">ENG</a>
+              </div>
+            </li> -->
+
+                <li>
+                  <div>
+                    <span
+                      style="
+                        color: #f8fafc;
+                        background-color: #1e293b;
+                        padding: 0.5rem;
+                      "
+                      >KR</span
+                    >
+                    <a
+                      href="./en/index.html"
+                      class="cursor-pointer"
+                      style="padding: 0px"
+                    >
+                      <span
+                        style="
+                          color: #2563eb;
+                          padding: 0.5rem;
+                          font-weight: bold;
+                        "
+                        >EN</span
+                      >
+                    </a>
+                  </div>
+                </li>
+              </ul>
+              <p></p>
+              <!-- <div class ="ip-check">
+                <li class="scroll-to-section"><div class="main-red-button-hover1"><a href="#">KOR</a></div></li>
+                <li class="scroll-to-section"><div class="main-red-button-hover2"><a href="#">ENG</a></div></li>
+              </div> -->
+
+              <a class="menu-trigger">
+                <span>Menu</span>
+              </a>
+              <!-- ***** Menu End ***** -->
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ***** Header Area End ***** -->
+
+    <!-- introduce -->
+    <div id="ceomessage" class="our-ceomessage section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="section-heading">
+              <h2>CEO 인사말</h2>
+              <div class="col-lg-9 lh-lg mx-auto" style="text-align: center">
+                <span></span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 col-md-12 col-sm-12 p-3 align-self-center">
+            <div class="ceomessage message-item1">
+              <div class="logo">
+                <a href="#"><img src="assets/images/kicsv_peter2.JPG" /></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <div class="ceomessage message-item1">
+              <p>
+                <br />
+                안녕하세요, 실리콘벨리 글로벌 혁신 센터장 배정융 입니다.
+              </p>
+              <br />
+              <p>
+                실리콘밸리는 전 세계 수많은 기술 기업들이 전 산업 분야에 걸쳐
+                앞선 기술을 기반으로 제품과 서비스로 시장 선점을 위하여 치열하게
+                경쟁하는 비즈니스 전장입니다. ICT 시장은 누구도 예측하기 힘든
+                속도와 방향으로 나날이 진화 중이며, 글로벌 시장은 더욱 빠르게
+                바뀌어 가고 있습니다. 특히 미국이라는 시장은 크고 깊은
+                블루오션이기도 하지만 예상치 못하는 경쟁자와 생소한 생태계로
+                이루어져 있습니다.
+              </p>
+              <br />
+              <p>
+                이에 저희 KIC 실리콘밸리는 미국 시장에 도전하시는 ICT
+                기업자들에게 실수는 줄이고 성공 확률은 키우는 역활을 하고
+                있습니다. 특히 팬데믹 이후에 매크로 경제가 급박하게 변화하고
+                있는 상황에서, 저희는 ICT 융합 기술 스타트업들이 발 빠르게
+                대처하고 앞서나갈 수 있도록 모든 역량을 집중하고 있습니다.
+              </p>
+              <br />
+              <p>
+                가장 역동적인 기술 시장인 실리콘밸리에서 넥스트 유니콘에
+                도전하는 스타트업 여러분을 위해서 탁월한 셰르파 역활에 최선을
+                다하겠습니다.
+              </p>
+              <!-- </span> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- our mission -->
+    <div id="mission" class="our-mission section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="section-heading">
+              <h2>KIC 실리콘밸리 주요 지원 체계</h2>
+              <div
+                class="col-lg-10 lh-lg"
+                style="text-align: center; margin: 0 auto"
+              >
+                <p class="pb-4">
+                  저희 센터에서는 유망한 한국의 스타트업들이 미국 시장에 직접
+                  진출하여 비용과 시간 그리고 실수를 최소화하여 소프트랜딩을
+                  하고 성장을 도모할 수 있도록 다양한 혜택을 제공하고 있습니다.
+                </p>
+                <p class="pt-4">
+                  1. 국내 과학 기술 ICT 분야 스타트업 기술/비즈니스 현지화
+                  액셀레이팅 프로그램 운영 등을 통한 매출 및 투자 지원합니다.
+                </p>
+                <p class="pb-4">
+                  2. 실리콘밸리 중심 글로벌 진출(예정) 과학기술 ICT 분야
+                  스타트업을 대상으로 실리콘밸리형 고속 성장 사이클을
+                  지원합니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container p-5">
+        <div class="row">
+          <!-- 1 -->
+          <div class="col-lg-6 col-md-6 py-5">
+            <div class="footer footer-item">
+              <div class="card p-3 border-0 rounded">
+                <div class="card-body" style="margin: 0 auto">
+                  <a href="#"
+                    ><img
+                      src="assets/images/social-network.png"
+                      alt="mission icon"
+                  /></a>
+                </div>
+                <div class="item">
+                  <p
+                    class="card-title border-bottom py-4"
+                    style="
+                      margin-bottom: 16px;
+                      font-family: Gotham, Arial, sans-serif;
+                      font-size: 24px;
+                      line-height: 140%;
+                      font-weight: 300;
+                    "
+                  >
+                    북미 시장 진출 지원 플랫폼
+                  </p>
+                  <p class="card-text" style="line-height: 32px">
+                    기술 중심의 강소기업 및 스타트업의 현지 사업 개발 및 투자
+                    유치 지원, 법인 설립, 코워킹 스페이스 제공, 다양한 최신 법률
+                    (비자, 특허, 고용 등) 정보 제공, 분야별 전문가 연계 등
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 2 -->
+          <div class="col-lg-6 col-md-6 py-5">
+            <div class="footer footer-item">
+              <div class="card p-3 border-0 rounded">
+                <div class="card-body" style="margin: 0 auto">
+                  <a href="#"
+                    ><img src="assets/images/location.png" alt="mission icon"
+                  /></a>
+                </div>
+                <div class="item">
+                  <p
+                    class="card-title border-bottom py-4"
+                    style="
+                      margin-bottom: 16px;
+                      font-family: Gotham, Arial, sans-serif;
+                      font-size: 24px;
+                      line-height: 140%;
+                      font-weight: 300;
+                    "
+                  >
+                    스타트업의 글로벌 사업화
+                  </p>
+                  <p class="card-text" style="line-height: 32px">
+                    글로벌 비즈니스 마인드 및 네트워크 제공, 실리콘 밸리
+                    스타트업 생태계 문화 및 인맥 연결, 오픈 이노베이션들과의
+                    협력체계 지원
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 3 -->
+          <div class="col-lg-6 col-md-6 py-5">
+            <div class="footer footer-item">
+              <div class="card p-3 border-0 rounded">
+                <div class="card-body" style="margin: 0 auto">
+                  <a href="#"
+                    ><img
+                      src="assets/images/korea_location.png"
+                      alt="mission icon"
+                  /></a>
+                </div>
+                <div class="item">
+                  <p
+                    class="card-title border-bottom py-4"
+                    style="
+                      margin-bottom: 16px;
+                      font-family: Gotham, Arial, sans-serif;
+                      font-size: 24px;
+                      line-height: 140%;
+                      font-weight: 300; ;
+                    "
+                  >
+                    현지 생태계 구축 및 국내 유관기관과 협력
+                  </p>
+                  <p class="card-text" style="line-height: 32px">
+                    실리콘밸리의 스타트업 생태계 구심점과 연동하여 한국 및
+                    미국의 투자사, 엑셀러레이터들과 협력체계를 구축 및 다양한
+                    현지의 기관들과 정보 및 기술 협력
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 4 -->
+          <div class="col-lg-6 col-md-6 py-5">
+            <div class="footer footer-item">
+              <div class="card p-3 border-0 rounded">
+                <div class="card-body" style="margin: 0 auto">
+                  <a href="#"
+                    ><img src="assets/images/usa.png" alt="mission icon"
+                  /></a>
+                </div>
+                <div class="item">
+                  <p
+                    class="card-title border-bottom py-4"
+                    style="
+                      margin-bottom: 16px;
+                      font-family: Gotham, Arial, sans-serif;
+                      font-size: 21px;
+                      line-height: 140%;
+                      font-weight: 300; ;
+                    "
+                  >
+                    북미 네트워크 구축 및 산업 섹터별 네트워크 형성
+                  </p>
+                  <p class="card-text" style="line-height: 32px">
+                    현지 핵심 네트워크 (K-Group, KSEA, 상공회의소 등) 구축 및
+                    버티컬별 비지니스 리더들과 긴밀히 협업, 다양한 현지 기관들
+                    (SRI, OIC) 소개, 글로벌 인재 양성/채용 지원
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <!-- footer 첫번째 섹션 -->
+          <div class="col-lg-12">
+            <div class="about footer-item">
+              <div class="logo">
+                <a href="#"
+                  ><img src="assets/images/kicsv_logo.png" alt="KICSV LOGO"
+                /></a>
+              </div>
+              <div class="footer-item">
+                <div class="row">
+                  <div class="col-6 form-groups">
+                    <input
+                      class="footer-form-control"
+                      type="text"
+                      name="name"
+                      placeholder="성함을 입력해주세요"
+                    />
+                  </div>
+                  <div class="col-6 form-groups">
+                    <input
+                      class="footer-form-control"
+                      type="text"
+                      name="email"
+                      placeholder="메일 주소를 입력해주세요"
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <textarea
+                    class="footer-form-textarea"
+                    name="message"
+                    placeholder="문의사항을 입력해주세요"
+                  ></textarea>
+                </div>
+                <!-- <div class="footer-p">답변은 작성해주신 이메일로 받아보실 수 있습니다. </div> -->
+                <!-- <input type="image" class="m-3 float-ends" src="./assets/images/send.png" name="submit" style="width: 30px;" /> -->
+                <div class="form-groups">
+                  <input
+                    class="footer-ask-send-btn"
+                    name="submit"
+                    value="전송"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="footer-last-item">
+              <!-- <p class="foote-info-p"><i class="fa fa-envelope-o"></i> info@kicsv.org</p>
+            <p class="foote-info-p"><i class="fa fa-phone"></i> (408)432-5085</p>
+            <p class="foote-info-p"><i class="fa fa-map-marker"></i> 3033 North First St. San Jose, CA 95134</P> -->
+              <!-- <div class="row footer-info-p">
+              <div class="col-2"></div>
+              <div class="col"><i class="fa fa-envelope-o"> info@kicsv.org</i></div>
+              <div class="col"><i class="fa fa-phone"> (408)432-5085 </i></div>
+              <div class="col"><i class="fa fa-map-marker"> 3033 North First St. San Jose, CA 95134</i></div>
+              <div class="col-2"></div>
+            </div> -->
+              <p class="foote-info-p">
+                <i class="fa fa-envelope-o"></i> info@kicsv.org &nbsp; &nbsp;
+                <i class="fa fa-phone"></i> (408)432-5085 &nbsp; &nbsp;
+                <i class="fa fa-map-marker"></i> 3003 North First St. San Jose,
+                CA 95134
+              </p>
+
+              <ul class="footer_ul" style="margin-top: 20px">
+                <li class="foote-info-p">
+                  <a href="https://www.nipa.kr/"
+                    ><img src="assets/images/nipa_logo.png"
+                  /></a>
+                </li>
+                <li class="foote-info-p">
+                  <a href="https://www.facebook.com/kicsv/"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      fill="currentColor"
+                      class="bi bi-facebook"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li class="foote-info-p">
+                  <a href="https://www.linkedin.com/in/kicsv/">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      fill="currentColor"
+                      class="bi bi-linkedin"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"
+                      />
+                    </svg>
+                    <i class="fa fa-square-linkedin"></i
+                  ></a>
+                </li>
+                <li class="foote-info-p">
+                  <a href="https://www.msit.go.kr/index.do"
+                    ><img src="assets/images/msict_logo.png"
+                  /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- </div> -->
+    </footer>
+
+    <!-- Scripts -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/animation.js"></script>
+    <script src="assets/js/imagesloaded.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      // Acc
+      $(document).on("click", ".naccs .menu div", function () {
+        var numberIndex = $(this).index();
+
+        if (!$(this).is("active")) {
+          $(".naccs .menu div").removeClass("active");
+          $(".naccs ul li").removeClass("active");
+
+          $(this).addClass("active");
+          $(".naccs ul")
+            .find("li:eq(" + numberIndex + ")")
+            .addClass("active");
+
+          var listItemHeight = $(".naccs ul")
+            .find("li:eq(" + numberIndex + ")")
+            .innerHeight();
+          $(".naccs ul").height(listItemHeight + "px");
+        }
+      });
+    </script>
+  </body>
+</html>

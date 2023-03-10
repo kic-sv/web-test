@@ -1,1 +1,735 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="./favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="KIC Silicon Valley is a home of global business for Korean Tech Companies. We support Korean Tech companies to expand their business in the global market. To find more information, please check www.kicsv.com or email us to info@kicsv.org. Our center located in the heart of Silicon Valley, San Jose."/><link rel="apple-touch-icon" href="./logo192.png"/><meta property="og:image" content="./meta.png"/><meta property="og:description" content="KIC Silicon Valley is a home of global business for Korean Tech Companies. We support Korean Tech companies to expand their business in the global market. To find more information, please check www.kicsv.com or email us to info@kicsv.org. Our center located in the heart of Silicon Valley, San Jose."/><meta property="twitter:image" content="./meta.png"/><meta name="twitter:description" content="KIC Silicon Valley is a home of global business for Korean Tech Companies. We support Korean Tech companies to expand their business in the global market. To find more information, please check www.kicsv.com or email us to info@kicsv.org. Our center located in the heart of Silicon Valley, San Jose."/><link rel="manifest" href="./manifest.json"/><title>K Innovation Center</title><script defer="defer" src="./static/js/main.7a7930c7.js"></script><link href="./static/css/main.c956edbb.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> -->
+    <link
+      rel="stylesheet prefetch"
+      href="https://gist.githubusercontent.com/mfd/614e2e80a22b878bde63cb471cbe677e/raw/eef2aabfd0d588d43285431186a0cf70305ceb80/sanfrancisco-font.css"
+    />
+    <title>KICSV소개</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Favicon-->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="assets/images/kicsv_favicon.png"
+    />
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css" />
+    <link rel="stylesheet" href="assets/css/templatemo-onix-digital.css" />
+    <link rel="stylesheet" href="assets/css/animated.css" />
+    <link rel="stylesheet" href="assets/css/owl.css" />
+    <link rel="stylesheet" href="assets/css/intro.css" />
+    <link rel="stylesheet" href="assets/css/service.css" />
+    <link rel="stylesheet" href="assets/css/program.css" />
+    <link rel="stylesheet" href="assets/css/partner.css" />
+    <link rel="stylesheet" href="assets/css/resource.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="assets/css/popup.css" />
+    <!--
+
+TemplateMo 565 Onix Digital
+
+https://templatemo.com/tm-565-onix-digital
+
+-->
+  </head>
+  <script>
+    // Acc
+    $(document).on("click", ".naccs .menu div", function () {
+      var numberIndex = $(this).index();
+
+      if (!$(this).is("active")) {
+        $(".naccs .menu div").removeClass("active");
+        $(".naccs ul li").removeClass("active");
+
+        $(this).addClass("active");
+        $(".naccs ul")
+          .find("li:eq(" + numberIndex + ")")
+          .addClass("active");
+
+        var listItemHeight = $(".naccs ul")
+          .find("li:eq(" + numberIndex + ")")
+          .innerHeight();
+        $(".naccs ul").height(listItemHeight + "px");
+      }
+    });
+
+    $("#modalButton").click(function () {
+      $("#EMPmodal").modal("hide");
+    });
+
+    $(document).ready(function () {
+      emailjs.init("ktAJwzbLF-tAkp_RQ");
+      //"user_xxxxx"이 부분은 사용자마다 다르니 반드시 emailJS의 installation 화면을 확인
+      $("input[name=submit]").click(function () {
+        alert("문의가 전달되었습니다.");
+
+        var templateParams = {
+          //각 요소는 emailJS에서 설정한 템플릿과 동일한 명으로 작성!
+          name: $("input[name=name]").val(),
+          email: $("input[name=email]").val(),
+          message: $("textarea[name=message]").val(),
+        };
+
+        emailjs
+          .send("service_py4k1av", "template_adoutoi", templateParams)
+          //emailjs.send('service ID', 'template ID', 보낼 내용이 담긴 객체)
+          .then(
+            function (response) {
+              console.log("SUCCESS!", response.status, response.text);
+            },
+            function (error) {
+              console.log("FAILED...", error);
+            }
+          );
+      });
+
+      $("#EMPmodal").modal("show");
+    });
+  </script>
+
+  <!-- ***** Preloader Start ***** -->
+  <!-- <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div> -->
+  <!-- ***** Preloader End ***** -->
+  <body>
+    <!-- ***** Header Area Start ***** -->
+    <header
+      class="header-area header-sticky"
+      data-wow-duration="0.75s"
+      data-wow-delay="0s"
+      style="position: sticky"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <nav class="main-nav">
+              <!-- ***** Logo Start ***** -->
+              <a href="index.html" class="logo">
+                <img src="assets/images/kicsv_logo.png" />
+              </a>
+              <!-- ***** Logo End ***** -->
+              <!-- ***** Menu Start ***** -->
+
+              <ul class="nav float-end">
+                <li class="scroll-to-section">
+                  <a href="./index.html" class="active">HOME</a>
+                </li>
+                <li class="scroll-to-section">
+                  <a href="./intro.html">KICSV소개</a>
+                </li>
+                <li class="scroll-to-section">
+                  <a href="./service.html">서비스</a>
+                </li>
+                <li claas="scroll-to-section">
+                  <a href="./program.html">프로그램</a>
+                </li>
+                <li claas="scroll-to-section">
+                  <a href="./partner.html">파트너</a>
+                </li>
+                <li claas="scroll-to-section">
+                  <a href="./resource.html">출장안내</a>
+                </li>
+                <li>
+                  <div>
+                    <span
+                      style="
+                        color: #f8fafc;
+                        background-color: #1e293b;
+                        padding: 0.5rem;
+                      "
+                      >KR</span
+                    >
+                    <a
+                      href="./en/index.html"
+                      class="cursor-pointer"
+                      style="padding: 0px"
+                    >
+                      <span
+                        style="
+                          color: #2563eb;
+                          padding: 0.5rem;
+                          font-weight: bold;
+                        "
+                        >EN</span
+                      >
+                    </a>
+                  </div>
+                </li>
+                <!-- <li class="scroll-to-section"><a href="https://www.facebook.com/kicsv/"><i class="fa fa-facebook"></i></a></li>
+                        <li class="scroll-to-section"><a href="https://www.linkedin.com/in/kicsv/"><i class="fa fa-linkedin"></i></a></li> -->
+                <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                언어 변경
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">KOR</a>
+                <a class="dropdown-item" href="#">ENG</a>
+              </div>
+              </li> -->
+              </ul>
+              <p></p>
+              <!-- <div class ="ip-check">
+                <li class="scroll-to-section"><div class="main-red-button-hover1"><a href="#">KOR</a></div></li>
+                <li class="scroll-to-section"><div class="main-red-button-hover2"><a href="#">ENG</a></div></li>
+              </div> -->
+
+              <a class="menu-trigger">
+                <span>Menu</span>
+              </a>
+
+              <!-- ***** Menu End ***** -->
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <!-- Button trigger modal -->
+    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#EMPmodal">
+  Launch static backdrop modal
+</button> -->
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="EMPmodal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      role="dialog"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">
+              EMP 프로그램 상세 안내
+            </h1>
+            <button
+              type="button"
+              id="modalButton"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <img
+              src="assets\images\2023 EMF_poster_popup_final_revised_re.png"
+            />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-link" style="color: white">
+              <a href="./emp.html">상세 안내 보기</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- landing page slide -->
+    <div class="main-banner" id="top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="row">
+              <!-- <div class="col-lg-6"> -->
+              <div class="owl-carousel owl-banner" id="main-banner_owl">
+                <div class="item header-text">
+                  <h6>KIC 실리콘밸리에 오신걸 환영합니다</h6>
+                  <!-- <h2>미국시장에서 <em>살아남아</em> 사업을 일으키고 <span>싶은 기업</span></h2> -->
+                  <h2>
+                    미국시장에서 살아남아
+                    <br />
+                    사업을 일으키고 싶은
+                    <br />
+                    기업
+                  </h2>
+                  <!-- <p>This is a professional looking HTML Bootstrap 5 website template brought to you by TemplateMo website.</p> -->
+                  <div class="down-buttons">
+                    <div class="main-blue-button-hover">
+                      <a href="./program.html">About EMP</a>
+                    </div>
+                    <div class="call-button">
+                      <!-- <a href="#"><i class="fa fa-phone"></i> (408)432-5085</a> -->
+                    </div>
+                  </div>
+                </div>
+                <div class="item header-text">
+                  <h6>KIC 실리콘밸리에 오신걸 환영합니다</h6>
+                  <!-- <h2>미국시장을 통해 <em>글로벌 시장에서</em><span>주목받고 싶은 스타트업</span></h2> -->
+                  <h2>
+                    미국시장을 통해
+                    <br />
+                    글로벌 시장에서
+                    <br />
+                    주목받고 싶은 스타트업
+                  </h2>
+                  <!-- <p>You are NOT allowed to redistribute this template ZIP file on any Free CSS collection websites. Contact us for more info. Thank you.</p> -->
+                  <div class="down-buttons">
+                    <div class="main-blue-button-hover">
+                      <a href="./program.html">About PMP</a>
+                    </div>
+                    <div class="call-button">
+                      <!-- <a href="#"><i class="fa fa-phone"></i> (408)432-5085</a> -->
+                    </div>
+                  </div>
+                </div>
+                <div class="item header-text">
+                  <h6>KIC 실리콘밸리에 오신걸 환영합니다</h6>
+                  <!-- <h2>실리콘벨리에서<em>투자 받을</em><span>스타트업</span></h2> -->
+                  <h2>
+                    실리콘밸리에서
+                    <br />
+                    투자 받아 성장하고 싶은
+                    <br />
+                    스타트업
+                  </h2>
+                  <!-- <p>Please <a rel="nofollow" href="https://www.paypal.me/templatemo" target="_blank">support us</a> a little via PayPal if this digital marketing HTML template is useful for you. Thank you.</p> -->
+                  <div class="down-buttons">
+                    <div class="main-blue-button-hover">
+                      <a href="./program.html">About GMP</a>
+                    </div>
+                    <div class="call-button">
+                      <!-- <a href="#"><i class="fa fa-phone"></i> (408)432-5085</a> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- portfolio -->
+    <div id="portfolio" class="our-portfolio section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="section-heading">
+              <h2>KIC 실리콘밸리 프로그램</h2>
+              <div class="col-lg-9 lh-lg mx-auto" style="text-align: center">
+                <span style="word-break: keep-all"
+                  >KIC 실리콘밸리는 미국에 최초로 진출하고자 하는 기업들과
+                  미국에서 본격적으로 시장을 공략하고자 하는 기업에게 실질적인
+                  도움이 되는 다양한 프로그램과 멤버십 제도를 제공하고
+                  있습니다.</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- KHLEE -->
+          <div class="portfolio-item container shadow-none bg-light rounded">
+            <br />
+            <div
+              class="row py-5 border-bottom"
+              data-aos="fade-up"
+              style="height: 23%"
+            >
+              <div class="col-md-4" style="text-align: center; margin: auto 0">
+                <img
+                  src="assets/images/crown.png"
+                  style="width: 176px"
+                  alt=""
+                />
+              </div>
+              <div class="col-md-7" style="margin: auto 0">
+                <h4>카본 멤버십<br />(Carbon Membership)</h4>
+                <p style="word-break: keep-all">
+                  글로벌 선도 기업으로 성장할 잠재력을 보유한 국내 우수 강소
+                  기업을 대상으로 미국 사업 진출, 미국 현지 사업 역량 강화 및
+                  미국 현지 네트워크 구축을 지원하는 멤버십 프로그램입니다.
+                </p>
+              </div>
+              <div class="col-md-1 col-sm-1"></div>
+            </div>
+            <!-- 2 -->
+            <div
+              class="row py-5 border-bottom"
+              data-aos="fade-up"
+              style="height: 23%"
+            >
+              <div class="col-md-1 col-sm-1"></div>
+              <div
+                class="col-md-4 order-1 order-md-2"
+                style="text-align: center; margin: auto 0"
+              >
+                <img
+                  src="assets/images/organization.png"
+                  style="width: 176px"
+                  alt=""
+                />
+              </div>
+              <div
+                class="col-md-7 p-4 order-2 order-md-1"
+                style="margin: auto 0"
+              >
+                <h4>
+                  실리콘밸리형 기업가 프로그램<br />(Entrepreneur Market-Fit
+                  Program)
+                </h4>
+                <p style="word-break: keep-all">
+                  회사의 단계와 상관없이, 미국에서 법인을 설립/운영하고 투자 및
+                  성장을 위한 실리콘밸리형 선진 기업 경영의 기본 틀과 전략
+                  그리고 인사이트를 분야별 최고 전문들로 구성하여 만든
+                  프로그램입니다.
+                </p>
+              </div>
+            </div>
+            <!-- 3 -->
+            <div
+              class="row py-5 border-bottom"
+              data-aos="fade-up"
+              style="height: 23%"
+            >
+              <div class="col-md-4" style="text-align: center; margin: auto 0">
+                <img
+                  src="assets/images/manual.png"
+                  style="width: 176px"
+                  alt=""
+                />
+              </div>
+              <div class="col-md-7 p-4" style="margin: auto 0">
+                <h4>
+                  실리콘밸리형 제품/서비스 적합성 검증 프로그램<br />(Product
+                  Market-Fit Program)
+                </h4>
+                <p style="word-break: keep-all">
+                  자사의 제품과 서비스의 미국내 잠재 고객을 찾을수 있도록 시장
+                  리서치 부터 제품의 현지화를 위해 다양한 형태의 방법과 툴,
+                  사례, 실질적인 네트워킹을 지원하여 POC까지 도달하는
+                  프로그램입니다. AI, 디지털 헬쓰, 메타버스, 기업용 솔루션,
+                  모빌리티/로보틱스등 버터컬별로 운영합니다.
+                </p>
+              </div>
+              <div class="col-md-1 col-sm-1"></div>
+            </div>
+            <!-- 4 -->
+            <div class="row py-5" data-aos="fade-up" style="height: 23%">
+              <div class="col-md-1 col-sm-1"></div>
+              <div
+                class="col-md-4 order-1 order-md-2"
+                style="text-align: center; margin: auto 0"
+              >
+                <img
+                  src="assets/images/stock-market.png"
+                  style="width: 176px"
+                  alt=""
+                />
+              </div>
+              <div
+                class="col-md-7 p-4 order-2 order-md-1"
+                style="margin: auto 0"
+              >
+                <h4>
+                  실리콘밸리형 고속 성장 프로그램<br />(Goto Market Program)
+                </h4>
+                <p style="word-break: keep-all">
+                  미국 시장에서 고객층을 찾은 후에 시장 검증을 한 기업들은 다음
+                  단계로 전속력으로 핵심 고객군을 공략하여 고속 성장을 해야
+                  합니다. 이때 팀, 서비스 그리고 세일즈 등 모든 분야가 성장을
+                  동시에 해야 하기 떄문에 적절한 성장에 필요한 팀 전략, 투자
+                  전략 등을 제공하는 프로그램입니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- services -->
+    <div id="services" class="our-services section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="section-heading">
+              <h2>KIC 실리콘밸리의 대표적 기업</h2>
+              <div
+                class="col-lg-9 lh-lg mx-auto"
+                style="text-align: center"
+              ></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12 mb-5">
+              <div class="owl-carousel owl-service">
+                <div class="row">
+                  <div class="col item">
+                    <h4>MAKINAROCKS</h4>
+                    <h5>이재혁 대표</h5>
+                    <div class="col icon" style="width: 130px; height: 130px">
+                      <img
+                        class="img"
+                        src="assets/images/makinarocks_ceophoto.png"
+                        style="
+                          height: 100%;
+                          object-fit: cover;
+                          margin: auto;
+                          border-radius: 32px;
+                        "
+                      />
+                    </div>
+                    <br />
+                    <p style="word-break: keep-all">
+                      <br />"미국 시장에서 성장하는데 필요한 정보와 제반
+                      사항들이 홍수와 같이 많은데, 실질적으로 필요한 사람과
+                      정보를 소개해 주어서 항상 자문을 많이 구하고 있습니다"
+                    </p>
+                  </div>
+                  <div class="col item">
+                    <h4>BEARROBOTICS</h4>
+                    <h5>하정우 대표</h5>
+                    <div class="icon" style="width: 130px; height: 130px">
+                      <img
+                        class="img"
+                        src="assets/images/bearrobotics_ceophoto.jpg"
+                        style="
+                          height: 100%;
+                          object-fit: cover;
+                          margin: auto;
+                          border-radius: 32px;
+                        "
+                      />
+                    </div>
+                    <br />
+                    <p style="word-break: keep-all">
+                      <br />"KIC 실리콘밸리에서 사업 초기에 많은 회의를 하면서
+                      밑그림을 그렸습니다. 초기에 많은 지원을 받았기에 미국
+                      진출하는 후배 스타트업 여러분께도 추천해 드립니다"
+                    </p>
+                  </div>
+                  <div class="col item">
+                    <h4>STRATIO</h4>
+                    <h5>이제형 대표</h5>
+                    <div class="icon" style="width: 130px; height: 130px">
+                      <img
+                        class="img"
+                        src="assets/images/kicsv_startrio.jpg"
+                        style="
+                          height: 100%;
+                          object-fit: cover;
+                          margin: auto;
+                          border-radius: 32px;
+                        "
+                      />
+                    </div>
+                    <br />
+                    <p style="word-break: keep-all">
+                      <br />"스타트업의 전쟁터 실리콘밸리, KIC는 고군분투하는
+                      한국 및 한국계 기업들의 어려움을 창업가 입장에서 함께
+                      고민하고 해결책을 제시해 주는 대한민국의 비밀 무기
+                      입니다."
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 문의하기 Section -->
+    <!-- <div id="ask" class="our ask-section">
+    <div class="container">
+      <div class="row">
+
+        <div class="row py-5">
+          <div class="col-md-6">
+            <h4 style="font-size: 36px; line-height: 140%; font-weight: 300;">문의하기</h4>
+            <p style="font-size: 16px; margin-bottom: 50px; font-weight: 300;">빠른 시일 내에 답장 드리겠습니다.</p>
+            <input type="text" class="form-control bg-white" name="name" placeholder="성함을 입력해주세요">
+            <input type="text" class="form-control bg-white" name="email" placeholder="메일 주소를 입력해주세요">
+           
+          </div>
+          <div class="col-md-12 p-4" style="margin: auto 0;">
+            <textarea name="message" class="form-control ta-message mh-100 bg-white" rows="5"
+              placeholder="내용을 입력해주세요"></textarea>
+          </div>
+          <div class="col-md-6">
+            <p class="float-left" style="font-size: 14px; margin-bottom: 10px; font-weight: 100;">문의사항은 입력하신 메일로 받으실 수 있습니다. </p>
+          </div>
+          <div class="col-md-6">
+            <input type="image" class="m-3 float-end" src="./assets/images/send.png" name="submit"
+                style="vertical-align : bottom; width: 30px;" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+    <!-- footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <!-- footer 첫번째 섹션 -->
+          <div class="col-lg-12">
+            <div class="about footer-item">
+              <div class="logo">
+                <a href="#"
+                  ><img src="assets/images/kicsv_logo.png" alt="KICSV LOGO"
+                /></a>
+              </div>
+              <div class="footer-item">
+                <div class="row">
+                  <div class="col-6 form-groups">
+                    <input
+                      class="footer-form-control"
+                      type="text"
+                      name="name"
+                      placeholder="성함을 입력해주세요"
+                    />
+                  </div>
+                  <div class="col-6 form-groups">
+                    <input
+                      class="footer-form-control"
+                      type="text"
+                      name="email"
+                      placeholder="메일 주소를 입력해주세요"
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <textarea
+                    class="footer-form-textarea"
+                    name="message"
+                    placeholder="문의사항을 입력해주세요"
+                  ></textarea>
+                </div>
+                <!-- <div class="footer-p">답변은 작성해주신 이메일로 받아보실 수 있습니다. </div> -->
+                <!-- <input type="image" class="m-3 float-ends" src="./assets/images/send.png" name="submit" style="width: 30px;" /> -->
+                <div class="row">
+                  <!-- <div class="form-groups col"><a href="https://www.nipa.kr/"><img src="assets/images/nipa_logo.png"></a></div> -->
+
+                  <div class="form-groups col">
+                    <input
+                      class="footer-ask-send-btn"
+                      name="submit"
+                      value="전송"
+                    />
+                  </div>
+                  <!-- <div class="form-groups col"><a href="https://www.msit.go.kr/index.do"><img src="assets/images/msict_logo.png"></a></div> -->
+                </div>
+              </div>
+            </div>
+            <div class="footer-last-item">
+              <!-- <p class="foote-info-p"><i class="fa fa-envelope-o"></i> info@kicsv.org</p>
+            <p class="foote-info-p"><i class="fa fa-phone"></i> (408)432-5085</p>
+            <p class="foote-info-p"><i class="fa fa-map-marker"></i> 3033 North First St. San Jose, CA 95134</P> -->
+              <!-- <div class="row footer-info-p">
+              <div class="col-2"></div>
+              <div class="col"><i class="fa fa-envelope-o"> info@kicsv.org</i></div>
+              <div class="col"><i class="fa fa-phone"> (408)432-5085 </i></div>
+              <div class="col"><i class="fa fa-map-marker"> 3033 North First St. San Jose, CA 95134</i></div>
+              <div class="col-2"></div>
+            </div> -->
+              <p class="foote-info-p">
+                <i class="fa fa-envelope-o"></i> info@kicsv.org &nbsp; &nbsp;
+                <i class="fa fa-phone"></i> (408) 432-5085 &nbsp; &nbsp;
+                <i class="fa fa-map-marker"></i> 3003 North First St. San Jose,
+                CA 95134
+              </p>
+
+              <ul class="footer_ul" style="margin-top: 20px">
+                <li class="foote-info-p">
+                  <a href="https://www.nipa.kr/"
+                    ><img src="assets/images/nipa_logo.png"
+                  /></a>
+                </li>
+                <li class="foote-info-p">
+                  <a href="https://www.facebook.com/kicsv/"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      fill="currentColor"
+                      class="bi bi-facebook"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li class="foote-info-p">
+                  <a href="https://www.linkedin.com/in/kicsv/">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      fill="currentColor"
+                      class="bi bi-linkedin"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"
+                      />
+                    </svg>
+                    <i class="fa fa-square-linkedin"></i
+                  ></a>
+                </li>
+                <li class="foote-info-p">
+                  <a href="https://www.msit.go.kr/index.do"
+                    ><img src="assets/images/msict_logo.png"
+                  /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/animation.js"></script>
+    <script src="assets/js/imagesloaded.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <!-- <script src="assets/js/popup.js"></script> -->
+    <!-- <script src="assets\js\jquery-3.3.1.min.js"></script> -->
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("ktAJwzbLF-tAkp_RQ");
+      })();
+    </script>
+  </body>
+</html>

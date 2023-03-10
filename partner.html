@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ko" style="height: 100%">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> -->
+    <link
+      rel="stylesheet prefetch"
+      href="https://gist.githubusercontent.com/mfd/614e2e80a22b878bde63cb471cbe677e/raw/eef2aabfd0d588d43285431186a0cf70305ceb80/sanfrancisco-font.css"
+    />
+    <title>KICSV소개</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Favicon-->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="assets/images/kicsv_favicon.png"
+    />
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css" />
+    <link rel="stylesheet" href="assets/css/templatemo-onix-digital.css" />
+    <link rel="stylesheet" href="assets/css/animated.css" />
+    <link rel="stylesheet" href="assets/css/owl.css" />
+    <link rel="stylesheet" href="assets/css/intro.css" />
+    <link rel="stylesheet" href="assets/css/service.css" />
+    <link rel="stylesheet" href="assets/css/program.css" />
+    <link rel="stylesheet" href="assets/css/partner.css" />
+    <link rel="stylesheet" href="assets/css/resource.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="assets/css/popup.css" />
+    <!--
+
+TemplateMo 565 Onix Digital
+
+https://templatemo.com/tm-565-onix-digital
+
+-->
+  </head>
+  <script>
+    // Acc
+    $(document).on("click", ".naccs .menu div", function () {
+      var numberIndex = $(this).index();
+
+      if (!$(this).is("active")) {
+        $(".naccs .menu div").removeClass("active");
+        $(".naccs ul li").removeClass("active");
+
+        $(this).addClass("active");
+        $(".naccs ul")
+          .find("li:eq(" + numberIndex + ")")
+          .addClass("active");
+
+        var listItemHeight = $(".naccs ul")
+          .find("li:eq(" + numberIndex + ")")
+          .innerHeight();
+        $(".naccs ul").height(listItemHeight + "px");
+      }
+    });
+
+    $("#modalButton").click(function () {
+      $("#EMPmodal").modal("hide");
+    });
+
+    $(document).ready(function () {
+      emailjs.init("ktAJwzbLF-tAkp_RQ");
+      //"user_xxxxx"이 부분은 사용자마다 다르니 반드시 emailJS의 installation 화면을 확인
+      $("input[name=submit]").click(function () {
+        alert("문의가 전달되었습니다.");
+
+        var templateParams = {
+          //각 요소는 emailJS에서 설정한 템플릿과 동일한 명으로 작성!
+          name: $("input[name=name]").val(),
+          email: $("input[name=email]").val(),
+          message: $("textarea[name=message]").val(),
+        };
+
+        emailjs
+          .send("service_py4k1av", "template_adoutoi", templateParams)
+          //emailjs.send('service ID', 'template ID', 보낼 내용이 담긴 객체)
+          .then(
+            function (response) {
+              console.log("SUCCESS!", response.status, response.text);
+            },
+            function (error) {
+              console.log("FAILED...", error);
+            }
+          );
+      });
+
+      $("#EMPmodal").modal("show");
+    });
+  </script>
+
+  <!-- ***** Preloader Start ***** -->
+  <!-- <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div> -->
+  <!-- ***** Preloader End ***** -->
+  <body style="display: flex; height: 100%; flex-direction: column">
+    <!-- ***** Header Area Start ***** -->
+    <header
+      class="header-area header-sticky"
+      data-wow-duration="0.75s"
+      data-wow-delay="0s"
+      style="position: sticky"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <nav class="main-nav">
+              <!-- ***** Logo Start ***** -->
+              <a href="index.html" class="logo">
+                <img src="assets/images/kicsv_logo.png" />
+              </a>
+              <!-- ***** Logo End ***** -->
+              <!-- ***** Menu Start ***** -->
+
+              <ul class="nav float-end">
+                <li class="scroll-to-section">
+                  <a href="./index.html">HOME</a>
+                </li>
+                <li class="scroll-to-section">
+                  <a href="./intro.html">KICSV소개</a>
+                </li>
+                <li class="scroll-to-section">
+                  <a href="./service.html">서비스</a>
+                </li>
+                <li claas="scroll-to-section">
+                  <a href="./program.html">프로그램</a>
+                </li>
+                <li claas="scroll-to-section">
+                  <a href="./partner.html" class="active">파트너</a>
+                </li>
+                <li claas="scroll-to-section">
+                  <a href="./resource.html">출장안내</a>
+                </li>
+                <!-- <li class="scroll-to-section"><a href="https://www.facebook.com/kicsv/"><i class="fa fa-facebook"></i></a></li>
+                        <li class="scroll-to-section"><a href="https://www.linkedin.com/in/kicsv/"><i class="fa fa-linkedin"></i></a></li> -->
+                <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                언어 변경
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">KOR</a>
+                <a class="dropdown-item" href="#">ENG</a>
+              </div>
+            </li> -->
+                <li>
+                  <div>
+                    <span
+                      style="
+                        color: #f8fafc;
+                        background-color: #1e293b;
+                        padding: 0.5rem;
+                      "
+                      >KR</span
+                    >
+                    <a
+                      href="./en/index.html"
+                      class="cursor-pointer"
+                      style="padding: 0px"
+                    >
+                      <span
+                        style="
+                          color: #2563eb;
+                          padding: 0.5rem;
+                          font-weight: bold;
+                        "
+                        >EN</span
+                      >
+                    </a>
+                  </div>
+                </li>
+              </ul>
+
+              <p></p>
+              <!-- <div class ="ip-check">
+                <li class="scroll-to-section"><div class="main-red-button-hover1"><a href="#">KOR</a></div></li>
+                <li class="scroll-to-section"><div class="main-red-button-hover2"><a href="#">ENG</a></div></li>
+              </div> -->
+
+              <a class="menu-trigger">
+                <span>Menu</span>
+              </a>
+              <!-- ***** Menu End ***** -->
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <!-- our partner -->
+    <!-- <div class="partnerimg" id="wrap">
+    <article class="item"><a href="#"><img src="assets/images/kicsv_photo.jpg"></a></article>
+    <article class="item"><a href="#"><img src="assets/images/kicsv_photo.jpg"></a></article>
+    <article class="item"><a href="#"><img src="assets/images/kicsv_photo.jpg"></a></article>
+    <article class="item"><a href="#"><img src="assets/images/kicsv_photo.jpg"></a></article>
+    <article class="item"><a href="#"><img src="assets/images/kicsv_photo.jpg"></a></article>
+    <article class="item"><a href="#"><img src="assets/images/kicsv_photo.jpg"></a></article>
+    <article class="item"><a href="#"><img src="assets/images/kicsv_photo.jpg"></a></article>
+    <article class="item"><a href="#"><img src="assets/images/kicsv_photo.jpg"></a></article>
+</div> -->
+
+    <!-- Portfolio Grid-->
+    <!-- SWIT.  Bear Robotics.    Z Converter. 
+Stratio.   3i.     4DReplay 
+DrimAes.   Makina Rocks.     -->
+    <div id="partner" class="our-partner section" style="flex: 1">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="section-heading">
+              <h2>KIC 실리콘밸리의 대표적 기업</h2>
+              <div
+                class="col-lg-9 lh-lg mx-auto my-5"
+                style="text-align: center"
+              ></div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 align-self-center">
+            <!-- Portfolio item 1-->
+            <div class="partner-item">
+              <!-- <a class="partner-link" data-bs-toggle="modal" href="#partnerModal6"> -->
+              <a href="https://swit.io/"
+                ><img
+                  class="img-fluid"
+                  src="assets/images/kicsv_startup/kicsv_swit.png"
+                  alt="..."
+              /></a>
+              <!-- </a> -->
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 align-self-center">
+            <!-- Portfolio item 2-->
+            <div class="partner-item">
+              <!-- <a class="partner-link" data-bs-toggle="modal" href="#partnerModal6"> -->
+              <a href="https://www.bearrobotics.ai/"
+                ><img
+                  class="img-fluid"
+                  src="assets/images/kicsv_startup/kicsv_bear.png"
+                  alt="..."
+              /></a>
+              <!-- </a> -->
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 align-self-center">
+            <!-- Portfolio item 3-->
+            <div class="partner-item">
+              <!-- <a class="partner-link" data-bs-toggle="modal" href="#partnerModal6"> -->
+              <a href="https://cloudconvert.com/z-converter"
+                ><img
+                  class="img-fluid"
+                  src="assets/images/kicsv_startup/kicsv_zconverter2.png"
+                  alt="..."
+              /></a>
+              <!-- </a> -->
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 align-self-center">
+            <!-- Portfolio item 4-->
+            <div class="partner-item">
+              <!-- <a class="partner-link" data-bs-toggle="modal" href="#partnerModal6"> -->
+              <a href="https://linksquare.io/"
+                ><img
+                  class="img-fluid"
+                  src="assets/images/kicsv_startup/kicsv_stratio_largelogo.png"
+                  style="width: 140px"
+              /></a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 align-self-center">
+            <!-- Portfolio item 5-->
+            <div class="partner-item">
+              <!-- <a class="partner-link" data-bs-toggle="modal" href="#partnerModal6"> -->
+              <a href="https://4dreplay.com/ko/?ckattempt=1"
+                ><img
+                  class="img-fluid"
+                  src="assets/images/kicsv_startup/kicsv_4dreplay.png"
+                  style="width: 85px"
+              /></a>
+              <!-- </a> -->
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 align-self-center">
+            <!-- Portfolio item 6-->
+            <div class="partner-item">
+              <!-- <a class="partner-link" data-bs-toggle="modal" href="#partnerModal6"> -->
+              <a href="https://www.3i.ai/"
+                ><img
+                  class="img-fluid"
+                  src="assets/images/kicsv_startup/kicsv_3i.png"
+                  alt="..."
+              /></a>
+              <!-- </a> -->
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 align-self-center">
+            <!-- Portfolio item 7-->
+            <div class="partner-item">
+              <!-- <a class="partner-link" data-bs-toggle="modal" href="#partnerModal6"> -->
+              <a href="https://drimaes.com/"
+                ><img
+                  class="img-fluid"
+                  src="assets/images/kicsv_startup/kcisv_drimaes_largelogo.png"
+                  style="width: 165px"
+              /></a>
+              <!-- </a> -->
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 align-self-center">
+            <!-- Portfolio item 8-->
+            <div class="partner-item">
+              <!-- <a class="partner-link" data-bs-toggle="modal" href="#partnerModal6"> -->
+              <a href="https://www.makinarocks.ai/en/"
+                ><img
+                  class="img-fluid"
+                  src="assets/images/kicsv_startup/kicsv_makinarocks_largelogo.png"
+                  style="width: 180px"
+              /></a>
+              <!-- </a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <!-- footer 첫번째 섹션 -->
+          <div class="col-lg-12">
+            <div class="about footer-item">
+              <div class="logo">
+                <a href="#"
+                  ><img src="assets/images/kicsv_logo.png" alt="KICSV LOGO"
+                /></a>
+              </div>
+              <div class="footer-item">
+                <div class="row">
+                  <div class="col-6 form-groups">
+                    <input
+                      class="footer-form-control"
+                      type="text"
+                      name="name"
+                      placeholder="성함을 입력해주세요"
+                    />
+                  </div>
+                  <div class="col-6 form-groups">
+                    <input
+                      class="footer-form-control"
+                      type="text"
+                      name="email"
+                      placeholder="메일 주소를 입력해주세요"
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <textarea
+                    class="footer-form-textarea"
+                    name="message"
+                    placeholder="문의사항을 입력해주세요"
+                  ></textarea>
+                </div>
+                <!-- <div class="footer-p">답변은 작성해주신 이메일로 받아보실 수 있습니다. </div> -->
+                <!-- <input type="image" class="m-3 float-ends" src="./assets/images/send.png" name="submit" style="width: 30px;" /> -->
+                <div class="form-groups">
+                  <input
+                    class="footer-ask-send-btn"
+                    name="submit"
+                    value="전송"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="footer-last-item">
+              <!-- <p class="foote-info-p"><i class="fa fa-envelope-o"></i> info@kicsv.org</p>
+            <p class="foote-info-p"><i class="fa fa-phone"></i> (408)432-5085</p>
+            <p class="foote-info-p"><i class="fa fa-map-marker"></i> 3033 North First St. San Jose, CA 95134</P> -->
+              <!-- <div class="row footer-info-p">
+              <div class="col-2"></div>
+              <div class="col"><i class="fa fa-envelope-o"> info@kicsv.org</i></div>
+              <div class="col"><i class="fa fa-phone"> (408)432-5085 </i></div>
+              <div class="col"><i class="fa fa-map-marker"> 3033 North First St. San Jose, CA 95134</i></div>
+              <div class="col-2"></div>
+            </div> -->
+              <p class="foote-info-p">
+                <i class="fa fa-envelope-o"></i> info@kicsv.org &nbsp; &nbsp;
+                <i class="fa fa-phone"></i> (408)432-5085 &nbsp; &nbsp;
+                <i class="fa fa-map-marker"></i> 3003 North First St. San Jose,
+                CA 95134
+              </p>
+
+              <ul class="footer_ul" style="margin-top: 20px">
+                <li class="foote-info-p">
+                  <a href="https://www.nipa.kr/"
+                    ><img src="assets/images/nipa_logo.png"
+                  /></a>
+                </li>
+                <li class="foote-info-p">
+                  <a href="https://www.facebook.com/kicsv/"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      fill="currentColor"
+                      class="bi bi-facebook"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li class="foote-info-p">
+                  <a href="https://www.linkedin.com/in/kicsv/">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      fill="currentColor"
+                      class="bi bi-linkedin"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"
+                      />
+                    </svg>
+                    <i class="fa fa-square-linkedin"></i
+                  ></a>
+                </li>
+                <li class="foote-info-p">
+                  <a href="https://www.msit.go.kr/index.do"
+                    ><img src="assets/images/msict_logo.png"
+                  /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- </div> -->
+    </footer>
+
+    <!-- Scripts -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/animation.js"></script>
+    <script src="assets/js/imagesloaded.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      // Acc
+      $(document).on("click", ".naccs .menu div", function () {
+        var numberIndex = $(this).index();
+
+        if (!$(this).is("active")) {
+          $(".naccs .menu div").removeClass("active");
+          $(".naccs ul li").removeClass("active");
+
+          $(this).addClass("active");
+          $(".naccs ul")
+            .find("li:eq(" + numberIndex + ")")
+            .addClass("active");
+
+          var listItemHeight = $(".naccs ul")
+            .find("li:eq(" + numberIndex + ")")
+            .innerHeight();
+          $(".naccs ul").height(listItemHeight + "px");
+        }
+      });
+    </script>
+  </body>
+</html>

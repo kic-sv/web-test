@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> -->
+    <link
+      rel="stylesheet prefetch"
+      href="https://gist.githubusercontent.com/mfd/614e2e80a22b878bde63cb471cbe677e/raw/eef2aabfd0d588d43285431186a0cf70305ceb80/sanfrancisco-font.css"
+    />
+    <title>KICSV소개</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Favicon-->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="assets/images/kicsv_favicon.png"
+    />
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css" />
+    <link rel="stylesheet" href="assets/css/templatemo-onix-digital.css" />
+    <link rel="stylesheet" href="assets/css/animated.css" />
+    <link rel="stylesheet" href="assets/css/owl.css" />
+    <link rel="stylesheet" href="assets/css/intro.css" />
+    <link rel="stylesheet" href="assets/css/service.css" />
+    <link rel="stylesheet" href="assets/css/program.css" />
+    <link rel="stylesheet" href="assets/css/partner.css" />
+    <link rel="stylesheet" href="assets/css/resource.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="assets/css/popup.css" />
+    <!--
+
+TemplateMo 565 Onix Digital
+
+https://templatemo.com/tm-565-onix-digital
+
+-->
+  </head>
+  <script>
+    // Acc
+    $(document).on("click", ".naccs .menu div", function () {
+      var numberIndex = $(this).index();
+
+      if (!$(this).is("active")) {
+        $(".naccs .menu div").removeClass("active");
+        $(".naccs ul li").removeClass("active");
+
+        $(this).addClass("active");
+        $(".naccs ul")
+          .find("li:eq(" + numberIndex + ")")
+          .addClass("active");
+
+        var listItemHeight = $(".naccs ul")
+          .find("li:eq(" + numberIndex + ")")
+          .innerHeight();
+        $(".naccs ul").height(listItemHeight + "px");
+      }
+    });
+
+    $("#modalButton").click(function () {
+      $("#EMPmodal").modal("hide");
+    });
+
+    $(document).ready(function () {
+      emailjs.init("ktAJwzbLF-tAkp_RQ");
+      //"user_xxxxx"이 부분은 사용자마다 다르니 반드시 emailJS의 installation 화면을 확인
+      $("input[name=submit]").click(function () {
+        alert("문의가 전달되었습니다.");
+
+        var templateParams = {
+          //각 요소는 emailJS에서 설정한 템플릿과 동일한 명으로 작성!
+          name: $("input[name=name]").val(),
+          email: $("input[name=email]").val(),
+          message: $("textarea[name=message]").val(),
+        };
+
+        emailjs
+          .send("service_py4k1av", "template_adoutoi", templateParams)
+          //emailjs.send('service ID', 'template ID', 보낼 내용이 담긴 객체)
+          .then(
+            function (response) {
+              console.log("SUCCESS!", response.status, response.text);
+            },
+            function (error) {
+              console.log("FAILED...", error);
+            }
+          );
+      });
+
+      $("#EMPmodal").modal("show");
+    });
+  </script>
+
+  <!-- ***** Preloader Start ***** -->
+  <!-- <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div> -->
+  <!-- ***** Preloader End ***** -->
+  <body>
+    <!-- ***** Header Area Start ***** -->
+    <header
+      class="header-area header-sticky"
+      data-wow-duration="0.75s"
+      data-wow-delay="0s"
+      style="position: sticky"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <nav class="main-nav">
+              <!-- ***** Logo Start ***** -->
+              <a href="index.html" class="logo">
+                <img src="assets/images/kicsv_logo.png" />
+              </a>
+              <!-- ***** Logo End ***** -->
+              <!-- ***** Menu Start ***** -->
+
+              <ul class="nav float-end">
+                <li class="scroll-to-section">
+                  <a href="./index.html">HOME</a>
+                </li>
+                <li class="scroll-to-section">
+                  <a href="./intro.html">KICSV소개</a>
+                </li>
+                <li class="scroll-to-section">
+                  <a href="./service.html">서비스</a>
+                </li>
+                <li claas="scroll-to-section">
+                  <a href="./program.html">프로그램</a>
+                </li>
+                <li claas="scroll-to-section">
+                  <a href="./partner.html">파트너</a>
+                </li>
+                <li claas="scroll-to-section">
+                  <a href="./resource.html" class="active">출장안내</a>
+                </li>
+                <!-- <li class="scroll-to-section"><a href="https://www.facebook.com/kicsv/"><i class="fa fa-facebook"></i></a></li>
+                        <li class="scroll-to-section"><a href="https://www.linkedin.com/in/kicsv/"><i class="fa fa-linkedin"></i></a></li> -->
+                <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                언어 변경
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">KOR</a>
+                <a class="dropdown-item" href="#">ENG</a>
+              </div>
+            </li> -->
+                <li>
+                  <div>
+                    <span
+                      style="
+                        color: #f8fafc;
+                        background-color: #1e293b;
+                        padding: 0.5rem;
+                      "
+                      >KR</span
+                    >
+                    <a
+                      href="./en/index.html"
+                      class="cursor-pointer"
+                      style="padding: 0px"
+                    >
+                      <span
+                        style="
+                          color: #2563eb;
+                          padding: 0.5rem;
+                          font-weight: bold;
+                        "
+                        >EN</span
+                      >
+                    </a>
+                  </div>
+                </li>
+              </ul>
+              <p></p>
+              <!-- <div class ="ip-check">
+                <li class="scroll-to-section"><div class="main-red-button-hover1"><a href="#">KOR</a></div></li>
+                <li class="scroll-to-section"><div class="main-red-button-hover2"><a href="#">ENG</a></div></li>
+              </div> -->
+
+              <a class="menu-trigger">
+                <span>Menu</span>
+              </a>
+              <!-- ***** Menu End ***** -->
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ***** Header Area End ***** -->
+
+    <!-- our resource -->
+    <!-- <div class="resource_banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 ">
+                <div class="section-heading">
+                    <h2>출장 안내</h2>
+                    <span>미국 현지에서 유용하게 사용되는 정보 및 중요한 날짜들입니다. </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+    <div id="resource" class="our-resource section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="section-heading">
+              <h2>KIC 실리콘밸리 출장 참고사항</h2>
+              <div
+                class="col-lg-9 lh-lg mx-auto my-5"
+                style="text-align: center"
+              >
+                <span
+                  >미국 현지 방문 시 유용하게 사용되는 정보 및 중요한
+                  일정입니다.
+                </span>
+                <p>(2023년 1월 기준)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-9 mx-auto py-5">
+            <!-- Accordion -->
+            <div id="accordionExample" class="accordion">
+              <!-- Accordion item 1 -->
+              <div class="cards">
+                <div
+                  id="headingOne"
+                  class="card-header bg-white border-bottom border-dark"
+                >
+                  <h3 class="mb-0 font-weight-bold">
+                    <a
+                      href="#"
+                      data-toggle="collapse"
+                      data-target="#collapseOne"
+                      aria-expanded="false"
+                      aria-controls="collapseOne"
+                      class="d-block position-relative text-dark text-uppercase collapsible-link py-4"
+                      >주요 공항</a
+                    >
+                  </h3>
+                </div>
+                <div
+                  id="collapseOne"
+                  aria-labelledby="headingOne"
+                  data-parent="#accordionExample"
+                  class="collapse"
+                >
+                  <div class="card-body py-3">
+                    <div class="font-weight-light m-0">
+                      <!-- 숙박_상급 -->
+                      <div class="resource_pgh">
+                        <div class="row">
+                          <div class="col-lg-3">
+                            <li class="resource_li">주요공항</li>
+                          </div>
+                          <div class="col-lg-8">
+                            <div class="resource_box">
+                              <li class="resource_li_con">
+                                <a href="https://www.flysfo.com/"
+                                  >SFO(샌프란시스코 국제 공항)</a
+                                >
+                              </li>
+                              <li class="resource_li_con">
+                                <a href="https://www.flysanjose.com/"
+                                  >SJC(미네타 산호세 국제공항)</a
+                                >
+                              </li>
+                              <li class="resource_li_con">
+                                <a href="https://www.oaklandairport.com/?"
+                                  >OAK(오클랜드 국제 공항)</a
+                                >
+                              </li>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Accordion item 2 -->
+              <div class="cards">
+                <div
+                  id="headingTwo"
+                  class="card-header bg-white border-1 border-dark"
+                >
+                  <h3 class="mb-0 font-weight-bold">
+                    <a
+                      href="#"
+                      data-toggle="collapse"
+                      data-target="#collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="collapseTwo"
+                      class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-4"
+                      >숙박</a
+                    >
+                  </h3>
+                </div>
+                <div
+                  id="collapseTwo"
+                  aria-labelledby="headingTwo"
+                  data-parent="#accordionExample"
+                  class="collapse"
+                >
+                  <div class="card-body py-3">
+                    <div class="font-weight-light m-0">
+                      <!-- 숙박_고급 -->
+                      <div class="resource_pgh">
+                        <div class="row">
+                          <div class="col-lg-3">
+                            <li class="resource_li">고급($250~)</li>
+                            <br /><br />
+                          </div>
+                          <div class="col-lg-3">
+                            <div class="resource_box">
+                              <li class="resource_li_con">Intercontinental</li>
+                              <li class="resource_li_con">Westin</li>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 숙박_중급 -->
+                      <div class="resource_pgh">
+                        <div class="row">
+                          <div class="col-lg-3">
+                            <li class="resource_li">중급 ($150~$250)</li>
+                          </div>
+                          <div class="col-lg-3">
+                            <div class="resource_box">
+                              <li class="resource_li_con">- AC Hotel</li>
+                              <li class="resource_li_con">
+                                - Crown PlazaHotel
+                              </li>
+                              <li class="resource_li_con">- Marriott Hotel</li>
+                              <li class="resource_li_con">- Hyatt Centric</li>
+                              <li class="resource_li_con">- Embassy Suites</li>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 숙박_하급 -->
+                      <div class="resource_pgh">
+                        <div class="row">
+                          <div class="col-lg-3">
+                            <li class="resource_li">하급 ($150 이하)</li>
+                          </div>
+                          <div class="col-lg-3">
+                            <div class="resource_box">
+                              <li class="resource_li_con">
+                                - Hilton Grand Inn
+                              </li>
+                              <li class="resource_li_con">- Aloft</li>
+                              <li class="resource_li_con">- Raddison</li>
+                              <li class="resource_li_con">- La Quinta</li>
+                              <li class="resource_li_con">- Ramada</li>
+                              <li class="resource_li_con">- Holiday Inn</li>
+                              <li class="resource_li_con">- TownPlaces</li>
+                              <li class="resource_li_con">- Executive Inn</li>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 숙박_기타 -->
+                      <div class="resource_pgh">
+                        <div class="row">
+                          <div class="col-lg-3">
+                            <li class="resource_li">기타 숙박</li>
+                          </div>
+                          <div class="col-lg-3">
+                            <div class="resource_box">
+                              <li class="resource_li_con">
+                                <a href="https://www.airbnb.co.kr/"
+                                  >- 에어비앤비</a
+                                >
+                              </li>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Accordion item 3 -->
+              <div class="cards">
+                <div
+                  id="headingThree"
+                  class="card-header bg-white border-1 border-dark"
+                >
+                  <h3 class="mb-0 font-weight-bold">
+                    <a
+                      href="#"
+                      data-toggle="collapse"
+                      data-target="#collapseThree"
+                      aria-expanded="false"
+                      aria-controls="collapseThree"
+                      class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-4"
+                      >이동수단</a
+                    >
+                  </h3>
+                </div>
+                <div
+                  id="collapseThree"
+                  aria-labelledby="headingThree"
+                  data-parent="#accordionExample"
+                  class="collapse"
+                >
+                  <div class="card-body py-3">
+                    <div class="font-weight-light m-0">
+                      <!-- 차량_공유차량 -->
+                      <div class="resource_pgh">
+                        <div class="row">
+                          <div class="col-lg-3">
+                            <li class="resource_li">공유차량</li>
+                          </div>
+                          <div class="col-lg-8">
+                            <div class="resource_box">
+                              <li class="resource_li_con">
+                                <a href="https://www.uber.com/us/en/seoul/"
+                                  >우버</a
+                                >
+                              </li>
+                              <li class="resource_li_con">
+                                <a href="https://www.lyft.com/">리프트</a>
+                              </li>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 차량_대중교통 -->
+                      <div class="resource_pgh">
+                        <div class="row">
+                          <div class="col-lg-3">
+                            <li class="resource_li">대중교통</li>
+                          </div>
+                          <div class="col-lg-8">
+                            <div class="resource_box">
+                              <li class="resource_li_con">
+                                <a href="https://www.caltrain.com/">Caltrain</a>
+                              </li>
+                              <li class="resource_li_con">
+                                <a href="https://www.vta.org/">VTA</a>
+                              </li>
+                              <li class="resource_li_con">
+                                <a href="https://www.bart.gov/">BART</a>
+                              </li>
+                              <li class="resource_li_con">Bus</li>
+                              <li class="resource_li_con">KickBoard</li>
+                              <li class="resource_li_con">
+                                Clipper, Bart, Movit등 앱 이용
+                              </li>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Accordion item 4 -->
+              <div class="cards">
+                <div
+                  id="headingFour"
+                  class="card-header bg-white border-1 border-dark"
+                >
+                  <h3 class="mb-0 font-weight-bold">
+                    <a
+                      href="#"
+                      data-toggle="collapse"
+                      data-target="#collapseFour"
+                      aria-expanded="false"
+                      aria-controls="collapseFour"
+                      class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-4"
+                      >비즈니스 에티켓</a
+                    >
+                  </h3>
+                </div>
+                <div
+                  id="collapseFour"
+                  aria-labelledby="headingFour"
+                  data-parent="#accordionExample"
+                  class="collapse"
+                >
+                  <div class="card-body py-3">
+                    <!-- 비즈니스 에티켓_1 -->
+                    <div class="resource_pgh">
+                      <div class="row">
+                        <div class="col-lg-3">
+                          <li class="resource_li">영어는 필수</li>
+                        </div>
+                        <div class="col-lg-8">
+                          <div class="resource_box">
+                            <p class="resource_p">
+                              영어는 사업에 있어서 필수 수단입니다. 비단 미국
+                              시장이 아니더라도 영어는 사람과의 관계를 여는
+                              수단이 됩니다. 영어를 ‘유창’하게 하는 것 혹은
+                              발음이 중요하다기보다, 비즈니스 영어는 자신의 전문
+                              영역이나 자기만의 스토리를 자신 있게 표현하는
+                              태도가 중요합니다. 미국식 네트워킹에서 사용할 수
+                              있는 게 짤막하되 인상적인 자기소개, 자신을
+                              돋보이게 하는 자기만의 스토리 텔링은 거울을 보고
+                              준비하는 요령이 필요합니다.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 비즈니스 에티켓_2 -->
+                    <div class="resource_pgh">
+                      <div class="row">
+                        <div class="col-lg-3">
+                          <li class="resource_li">링크드인 활용</li>
+                        </div>
+                        <div class="col-lg-8">
+                          <div class="resource_box">
+                            <p class="resource_p">
+                              링크인 활용 미국에선 명함보단 링크드인을 비즈니스
+                              네트워크에 더 많이 사용합니다. 명함을 주고받는
+                              문화가 펜데믹 이후로 더욱 줄어들었으니, 명함을
+                              준비는 하되 링크드인 QR코드나 직접 전화번호를
+                              주고받을 준비를 하면 좋습니다.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 비즈니스 에티켓_3 -->
+                    <div class="resource_pgh">
+                      <div class="row">
+                        <div class="col-lg-3">
+                          <li class="resource_li">소개에 대한 감사</li>
+                        </div>
+                        <div class="col-lg-8">
+                          <div class="resource_box">
+                            <p class="resource_p">
+                              미국에서 소개는 Warm Introduction이 매우
+                              유효합니다. 특히 미국에 아무런 레퍼런스가 없을
+                              경우 더욱 유용한데, warm introduction을 해주는
+                              매개자의 노고를 반드시 높이 평가를 해주는 에티켓이
+                              필요합니다.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 비즈니스 에티켓_4 -->
+                    <div class="resource_pgh">
+                      <div class="row">
+                        <div class="col-lg-3">
+                          <li class="resource_li">간접적 관계 형성</li>
+                        </div>
+                        <div class="col-lg-8">
+                          <div class="resource_box">
+                            <p class="resource_p">
+                              현지에서는 Cold Calling이라는 소개 없는 콘택트를
+                              sales에 많이 활용하고 있습니다. 성공률은 낮지만,
+                              링크트인을 콘택트를 찾고, 직접 혹은 간접적으로
+                              연결하는 수단으로 활용하고 있습니다
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 비즈니스 에티켓_5 -->
+                    <div class="resource_pgh">
+                      <div class="row">
+                        <div class="col-lg-3">
+                          <li class="resource_li">네트워크 유지</li>
+                        </div>
+                        <div class="col-lg-8">
+                          <div class="resource_box">
+                            <p class="resource_p">
+                              미국에서는 Director 급 이상을 만나고 관계를
+                              유지하는 것은 사업에 매우 중요한 일입니다. 한국과
+                              달리 관계 형성에 많은 시간과 공을 들여야 하므로
+                              한두 번 출장이나 콘퍼런스에서 만남 이후에 꾸준히
+                              연락과 만남을 취해야 합니다.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 비즈니스 에티켓_6 -->
+                    <div class="resource_pgh">
+                      <div class="row">
+                        <div class="col-lg-3">
+                          <li class="resource_li">대화 매너</li>
+                        </div>
+                        <div class="col-lg-8">
+                          <div class="resource_box">
+                            <p class="resource_p">
+                              미국인들과 만날떈 이름을 불러주고 대화에서
+                              눈맞춤이 중요합니다. 또한 small talk를 주기도 하고
+                              받기도 함으로써 자신을 알리고 상대방을 알아나가는
+                              노력이 중요하며, 공식적 미팅 혹은 비공식적인
+                              네트워킹 이후 반드시 follow up을 해두는 것이
+                              좋습니다. 미국에서 사업하시다 보면 언제 어떤
+                              사람이 필요하게 될지 모릅니다. 늦었다고 생각하지
+                              말고 지금부터라도 자신만의 네트워크를 갖추는
+                              노력이 필요합니다.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 비즈니스 에티켓_7 -->
+                    <div class="resource_pgh">
+                      <div class="row">
+                        <div class="col-lg-3">
+                          <li class="resource_li">습득</li>
+                        </div>
+                        <div class="col-lg-8">
+                          <div class="resource_box">
+                            <p class="resource_p">
+                              현지에서 대화를 나누다 보면 모르는 용어나 내용을
+                              접할 수 있습니다. 이떄 절대 가정하거나 지나치지
+                              마시고 직접 물어보시고 배워두실수록 다음에
+                              활용하실 수 있습니다.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Accordion item 5 -->
+              <div class="cards">
+                <div
+                  id="headingFive"
+                  class="card-header bg-white border-1 border-dark"
+                >
+                  <h3 class="mb-0 font-weight-bold">
+                    <a
+                      href="#"
+                      data-toggle="collapse"
+                      data-target="#collapseFive"
+                      aria-expanded="false"
+                      aria-controls="collapseFive"
+                      class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-4"
+                      >주요 컨퍼런스</a
+                    >
+                  </h3>
+                </div>
+                <div
+                  id="collapseFive"
+                  aria-labelledby="headingFive"
+                  data-parent="#accordionExample"
+                  class="collapse"
+                >
+                  <div class="card-body py-3">
+                    <div class="font-weight-light m-0">
+                      <div class="resource_pgh">
+                        <div class="row">
+                          <div class="col-lg-3">
+                            <li class="resource_li">
+                              캘리포니아 컨퍼런스 및 행사
+                            </li>
+                          </div>
+                          <div class="col-lg-8">
+                            <div class="resource_box">
+                              <li class="resource_li_con">
+                                <a href="https://www.cta.tech/">CES</a>
+                              </li>
+                              <li class="resource_li_con">
+                                <a
+                                  href="https://www.jpmorgan.com/solutions/cib/insights/health-care-conference"
+                                  >JP Morgan Health Summit</a
+                                >
+                              </li>
+                              <li class="resource_li_con">
+                                <a href="https://www.sxsw.com/">SXSW</a>
+                              </li>
+                              <li class="resource_li_con">
+                                <a href="https://b2b.gamescom.global/"
+                                  >GamesCom</a
+                                >
+                              </li>
+                              <li class="resource_li_con">
+                                <a href="https://www.rsaconference.com/">RSA</a>
+                              </li>
+                              <li class="resource_li_con">
+                                <a
+                                  href="https://www.semi.org/en/region-selector"
+                                  >Semicon</a
+                                >
+                              </li>
+                              <li class="resource_li_con">
+                                <a href="">WEST</a>
+                              </li>
+                              <li class="resource_li_con">
+                                <a href="https://www.siggraph.org/">SIGRAFF</a>
+                              </li>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Accordion item 6 -->
+              <div class="cards">
+                <div
+                  id="headingSix"
+                  class="card-header bg-white border-1 border-dark"
+                >
+                  <h3 class="mb-0 font-weight-bold">
+                    <a
+                      href="#"
+                      data-toggle="collapse"
+                      data-target="#collapseSix"
+                      aria-expanded="false"
+                      aria-controls="collapseSix"
+                      class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-4"
+                      >흔히 하는 실수</a
+                    >
+                  </h3>
+                </div>
+                <div
+                  id="collapseSix"
+                  aria-labelledby="headingSix"
+                  data-parent="#accordionExample"
+                  class="collapse"
+                >
+                  <div class="card-body py-3">
+                    <div class="row">
+                      <div class="col-lg-3">
+                        <li class="resource_li">메너</li>
+                      </div>
+                      <div class="col-lg-9">
+                        <div class="resource_box">
+                          <li class="resource_li_con">
+                            <p class="resource_p">
+                              - 대화 상대방의 이름을 기억 못하는 것
+                            </p>
+                          </li>
+                          <li class="resource_li_con">
+                            <p class="resource_p">- 대화에 참여하지 않는 것</p>
+                          </li>
+                          <li class="resource_li_con">
+                            <p class="resource_p">
+                              - 지금 당장 필요하지 않기에 공을 들이지 않는 것
+                            </p>
+                          </li>
+                          <li class="resource_li_con">
+                            <p class="resource_p">
+                              - 소개해준 사람의 고마움을 표시하지 않는 것
+                            </p>
+                          </li>
+                          <li class="resource_li_con">
+                            <p class="resource_p">
+                              - 한국에서의 성공방식을 그대로 가져다가 사용하는
+                              것
+                            </p>
+                          </li>
+                          <li class="resource_li_con">
+                            <p class="resource_p">
+                              - 자기소개나 사업 목적을 표현할 준비를 하지 않은
+                              것
+                            </p>
+                          </li>
+                          <li class="resource_li_con">
+                            <p class="resource_p">
+                              - 처음부터 끝까지 목적 없이 사업 이야기만 나열하는
+                              것 (내가 필요한 것만 던지는 습관)
+                            </p>
+                          </li>
+                          <li class="resource_li_con">
+                            <p class="resource_p">
+                              - 상대방이 무엇을 원하는지 파악하지 않는 습관
+                            </p>
+                          </li>
+                          <li class="resource_li_con">
+                            <p class="resource_p">
+                              - 사람이나 기업을 만나기 전에 조사하지 않는 것
+                              (DYOR!)
+                            </p>
+                          </li>
+                          <li class="resource_li_con">
+                            <p class="resource_p">
+                              - 한 번의 만남으로 많은 진도를 빼려는 인식
+                            </p>
+                          </li>
+                          <li class="resource_li_con">
+                            <p class="resource_p">
+                              - 출장을 왔기에 수많은 미팅을 해치워야 한다는 생각
+                              (만남의 질보다 양에 집착)
+                            </p>
+                          </li>
+                          <li class="resource_li_con">
+                            <p class="resource_p">
+                              - 기술이 좋기 때문에 실리콘밸리에서 통한다는
+                              선입견
+                            </p>
+                          </li>
+                          <li class="resource_li_con">
+                            <p class="resource_p">
+                              - 기술이 좋기 떄문에 실리콘밸리에서는 쉽게
+                              투자받을 수 있을 것이라는 편견
+                            </p>
+                          </li>
+                          <li class="resource_li_con">
+                            <p class="resource_p">
+                              - 실리콘밸리는 무조건 회사 가치를 높게
+                              평가하리라는 안이한 인식
+                            </p>
+                          </li>
+                          <li class="resource_li_con">
+                            <p class="resource_p">
+                              - 미국에서는 한국 사람은 언제나 쉽게 만나준다는
+                              생각
+                            </p>
+                          </li>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Accordion item 7 -->
+              <div class="cards">
+                <div
+                  id="headingSeven"
+                  class="card-header bg-white border-1 border-dark"
+                >
+                  <h3 class="mb-0 font-weight-bold">
+                    <a
+                      href="#"
+                      data-toggle="collapse"
+                      data-target="#collapseSeven"
+                      aria-expanded="false"
+                      aria-controls="collapseSeven"
+                      class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-4"
+                      >날씨 및 환경</a
+                    >
+                  </h3>
+                </div>
+                <div
+                  id="collapseSeven"
+                  aria-labelledby="headingSeven"
+                  data-parent="#accordionExample"
+                  class="collapse"
+                >
+                  <div class="card-body py-3">
+                    <div class="font-weight-light m-0">
+                      <div class="resource_pgh">
+                        <div class="row">
+                          <div class="col-lg-3">
+                            <li class="resource_li">날씨</li>
+                          </div>
+                          <div class="col-lg-8">
+                            <div class="resource_box">
+                              <li class="resource_li_con">
+                                <a
+                                  href="https://weather.com/ko-KR/weather/today/l/California+City+CA+United+States?canonicalCityId=6150a3ab0f361eba4f056631e9bac96003412e7e4276cb64516724d3e7237159"
+                                  >캘리포니아 날씨 참고</a
+                                >
+                              </li>
+                              <li class="resource_li_con">
+                                <a
+                                  href="https://weather.com/weather/today/l/9b881ffaf84bf05e43de6bcf4fe83005c4c5858c413f3ba2b56f40c5a9b1a2de"
+                                  >산호세 날씨 참고</a
+                                >
+                              </li>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Accordion item 8 -->
+              <div class="cards">
+                <div
+                  id="headingEight"
+                  class="card-header bg-white border-bottom border-1 border-dark"
+                >
+                  <h3 class="mb-0 font-weight-bold">
+                    <a
+                      href="#"
+                      data-toggle="collapse"
+                      data-target="#collapseEight"
+                      aria-expanded="false"
+                      aria-controls="collapseEight"
+                      class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-4"
+                      >기타</a
+                    >
+                  </h3>
+                </div>
+                <div
+                  id="collapseEight"
+                  aria-labelledby="headingEight"
+                  data-parent="#accordionExample"
+                  class="collapse"
+                >
+                  <div class="card-body py-3">
+                    <div class="font-weight-light m-0">
+                      <!-- 기타-운전 -->
+                      <div class="resource_pgh">
+                        <div class="row">
+                          <div class="col-lg-3">
+                            <li class="resource_li">운전</li>
+                          </div>
+                          <div class="col-lg-8">
+                            <div class="resource_box">
+                              <li class="resource_li_con">
+                                <a
+                                  href="assets/images/CA_DriveGuide.pdf"
+                                  download="newfilename"
+                                  >California 운전</a
+                                >
+                              </li>
+                              <li class="resource_li_con">
+                                <a
+                                  href="https://www.caranddriver.com/car-insurance/a35874528/average-cost-of-car-insurance-in-san-francisco/"
+                                  >자동차 보험료 참고</a
+                                >
+                              </li>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 기타-식사 -->
+                      <div class="resource_pgh">
+                        <div class="row">
+                          <div class="col-lg-3">
+                            <li class="resource_li">물가</li>
+                          </div>
+                          <div class="col-lg-8">
+                            <div class="resource_box">
+                              <li class="resource_li_con">
+                                <a
+                                  href="https://www.budgetyourtrip.com/united-states-of-america/san-francisco"
+                                  >켈리포니아의 물가 참고</a
+                                >
+                              </li>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 기타-렌트비 -->
+                      <div class="resource_pgh">
+                        <div class="row">
+                          <div class="col-lg-3">
+                            <li class="resource_li">거주 관련 렌트비</li>
+                          </div>
+                          <div class="col-lg-8">
+                            <div class="resource_box">
+                              <li class="resource_li_con">
+                                <a
+                                  href="https://www.rentcafe.com/average-rent-market-trends/us/ca/san-francisco/"
+                                  >렌트비 참고</a
+                                >
+                              </li>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <!-- footer 첫번째 섹션 -->
+          <div class="col-lg-12">
+            <div class="about footer-item">
+              <div class="logo">
+                <a href="#"
+                  ><img src="assets/images/kicsv_logo.png" alt="KICSV LOGO"
+                /></a>
+              </div>
+              <div class="footer-item">
+                <div class="row">
+                  <div class="col-6 form-groups">
+                    <input
+                      class="footer-form-control"
+                      type="text"
+                      name="name"
+                      placeholder="성함을 입력해주세요"
+                    />
+                  </div>
+                  <div class="col-6 form-groups">
+                    <input
+                      class="footer-form-control"
+                      type="text"
+                      name="email"
+                      placeholder="메일 주소를 입력해주세요"
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <textarea
+                    class="footer-form-textarea"
+                    name="message"
+                    placeholder="문의사항을 입력해주세요"
+                  ></textarea>
+                </div>
+                <!-- <div class="footer-p">답변은 작성해주신 이메일로 받아보실 수 있습니다. </div> -->
+                <!-- <input type="image" class="m-3 float-ends" src="./assets/images/send.png" name="submit" style="width: 30px;" /> -->
+                <div class="form-groups">
+                  <input
+                    class="footer-ask-send-btn"
+                    name="submit"
+                    value="전송"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="footer-last-item">
+              <!-- <p class="foote-info-p"><i class="fa fa-envelope-o"></i> info@kicsv.org</p>
+            <p class="foote-info-p"><i class="fa fa-phone"></i> (408)432-5085</p>
+            <p class="foote-info-p"><i class="fa fa-map-marker"></i> 3033 North First St. San Jose, CA 95134</P> -->
+              <!-- <div class="row footer-info-p">
+              <div class="col-2"></div>
+              <div class="col"><i class="fa fa-envelope-o"> info@kicsv.org</i></div>
+              <div class="col"><i class="fa fa-phone"> (408)432-5085 </i></div>
+              <div class="col"><i class="fa fa-map-marker"> 3033 North First St. San Jose, CA 95134</i></div>
+              <div class="col-2"></div>
+            </div> -->
+              <p class="foote-info-p">
+                <i class="fa fa-envelope-o"></i> info@kicsv.org &nbsp; &nbsp;
+                <i class="fa fa-phone"></i> (408)432-5085 &nbsp; &nbsp;
+                <i class="fa fa-map-marker"></i> 3003 North First St. San Jose,
+                CA 95134
+              </p>
+
+              <ul class="footer_ul" style="margin-top: 20px">
+                <li class="foote-info-p">
+                  <a href="https://www.nipa.kr/"
+                    ><img src="assets/images/nipa_logo.png"
+                  /></a>
+                </li>
+                <li class="foote-info-p">
+                  <a href="https://www.facebook.com/kicsv/"
+                    ><i class="fa fa-facebook"></i
+                  ></a>
+                </li>
+                <li class="foote-info-p">
+                  <a href="https://www.linkedin.com/in/kicsv/"
+                    ><i class="fa fa-linkedin"></i
+                  ></a>
+                </li>
+                <li class="foote-info-p">
+                  <a href="https://www.msit.go.kr/index.do"
+                    ><img src="assets/images/msict_logo.png"
+                  /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/animation.js"></script>
+    <script src="assets/js/imagesloaded.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      // Acc
+      $(document).on("click", ".naccs .menu div", function () {
+        var numberIndex = $(this).index();
+
+        if (!$(this).is("active")) {
+          $(".naccs .menu div").removeClass("active");
+          $(".naccs ul li").removeClass("active");
+
+          $(this).addClass("active");
+          $(".naccs ul")
+            .find("li:eq(" + numberIndex + ")")
+            .addClass("active");
+
+          var listItemHeight = $(".naccs ul")
+            .find("li:eq(" + numberIndex + ")")
+            .innerHeight();
+          $(".naccs ul").height(listItemHeight + "px");
+        }
+      });
+    </script>
+  </body>
+</html>
