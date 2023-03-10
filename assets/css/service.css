@@ -1,0 +1,135 @@
+.our-service {
+    background-color: #ffffff;
+}
+
+.our-service .section-heading {
+  /* padding-bottom: 60px; */
+  padding-top: 5%;
+}
+.our-service .section-heading h2 {
+  margin-bottom: 33px;
+  font-family: Gotham,Arial,sans-serif;
+  font-size: 36px;
+  line-height: 140%;
+  font-weight: 300;
+  word-break:keep-all;
+}
+
+.our-service .section-heading span {
+  margin-bottom: 10px;
+  font-family: Gotham,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  word-break:keep-all;
+  word-break:keep-all;
+}
+.service-container {
+    text-align: center;
+}
+
+.our-service .servic-itemsection {
+  margin: 30px 0px;
+}
+
+.our-service .first-section {
+    text-align: center;
+}
+
+.our-service .service-item img {
+    width: 75px;
+    overflow: hidden;
+    text-align: center;
+
+}
+.our-service .item {
+    margin: 5%;
+    display: block;
+    margin: auto;
+    align-items: center;
+    padding: 2%;
+
+}
+.our-service .item h6{
+  text-align: center;
+  font-family: Gotham,Arial,sans-serif;
+  font-weight: 400;
+  margin: 5% 0%;
+  font-size: 16px;
+  word-break:keep-all;
+}
+.our-service .item p{
+  text-align: center;
+  font-size: 14px;
+  line-height: 25px;
+  color: #2a2a2a;
+  word-break:keep-all;
+  word-break:keep-all;
+
+}
+
+/* -------------------
+service accordion
+------------------- */
+.accordion {
+margin-bottom: 30px;
+}
+
+.collapsible-link::after {
+content: '';
+width: 2px;
+height: 14px;
+background: #333;
+position: absolute;
+top: calc(50% - 6px);
+right: calc(1rem + 5px);
+display: block;
+transition: all 0.3s;
+}
+
+.collapsible-link[aria-expanded='true']::after {
+transform: rotate(90deg) translateX(-0px);
+}
+
+.collapsible-link[aria-expanded='true']::before {
+transform: rotate(180deg);
+}
+
+
+.our-service .cards h3{
+  font-size: 20px;
+  word-break:keep-all;
+}
+
+.service_pgh {
+margin-bottom: 30px;
+}
+
+.service_box {
+border-width: 0px 0px 0px 1px;
+border-style: solid;
+padding-left: 10px;
+}
+
+.service_li {
+/* font-weight: bold; */
+/* margin-top: 20px; */
+font-size: 20px;
+word-break:keep-all;
+}
+
+.service_li_con {
+color: rgb(42, 42, 42);
+text-decoration: none;
+font-size: 16px;
+margin-bottom: 5px;
+line-height: 35px;
+word-break:keep-all;
+word-break:keep-all;
+}
+
+.service_p {
+font-size: 13px;
+word-break:keep-all;
+word-break:keep-all;
+}
+

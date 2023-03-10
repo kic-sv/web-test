@@ -1,0 +1,100 @@
+.resource_banner {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding: 100px 0px 130px 0px;
+    position: relative;
+    overflow: hidden;
+    background-image: url(../images/kicsv_resource_bg.jpg);
+}
+
+.our-resource .section-heading {
+  padding-bottom: 5px;
+  padding-top: 5%;
+}
+.our-resource .section-heading h2 {
+  margin-bottom: 33px;
+  font-size: 36px;
+  line-height: 140%;
+  font-weight: 300;
+  word-break:keep-all;
+}
+
+
+.our-resource .section-heading span {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 300;
+  word-break:keep-all;
+}
+.accordion {
+  margin-bottom: 30px;
+  }
+  
+  .collapsible-link::after {
+  content: '';
+  width: 2px;
+  height: 14px;
+  background: #333;
+  position: absolute;
+  top: calc(50% - 6px);
+  right: calc(1rem + 5px);
+  display: block;
+  transition: all 0.3s;
+  }
+  
+  .collapsible-link[aria-expanded='true']::after {
+  transform: rotate(90deg) translateX(-0px);
+  }
+  
+  .collapsible-link[aria-expanded='true']::before {
+  transform: rotate(180deg);
+  }
+  
+  
+  .our-resource .cards h3{
+    font-size: 20px;
+    word-break:keep-all;
+  }
+  
+  .resource_pgh {
+  margin-bottom: 30px;
+  
+  }
+  
+  .resource_box {
+  border-width: 0px 0px 0px 1px;
+  border-style: solid;
+  padding-left: 10px;
+  }
+  
+  .resource_li {
+  /* font-weight: bold; */
+  /* margin-top: 20px; */
+  font-size: 20px;
+  word-break:keep-all;
+  }
+  
+  .resource_li_con {
+  color: rgb(42, 42, 42);
+  text-decoration: none;
+  font-size: 16px;
+  margin-bottom: 5px;
+  line-height: 35px;
+  word-break:keep-all;
+  }
+  
+  .resource_p {
+  font-size: 16px;
+  word-break:keep-all;
+  }
+  
+  
+  
+  
+  
+  .resource_img {
+  width: 90%;
+  height: auto;
+  }
+  

@@ -1,0 +1,11 @@
+.modal-body img {
+    width: 100%;
+}
+
+.our-service .section-heading img {
+    width: 80%;
+    /* text-align: center; */
+    margin-top: 30px;
+    display:block;
+
+}

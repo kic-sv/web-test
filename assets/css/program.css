@@ -1,0 +1,145 @@
+.our-program {
+    background-color: #ffffff;
+}
+
+.our-program .section-heading {
+  /* padding-bottom: 60px; */
+  padding-top: 5%;
+}
+.our-program .section-heading h2 {
+  margin-bottom: 33px;
+  font-family: Gotham,Arial,sans-serif;
+  font-size: 36px;
+  line-height: 140%;
+  font-weight: 300;
+  word-break:keep-all;
+}
+
+.our-program .section-heading span {
+  margin-bottom: 10px;
+  font-family: Gotham,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  word-break:keep-all;
+
+}
+
+/* 1 */
+@media (min-width: 576px) {
+	.rounded-nav {
+	  border-radius: 50rem !important;
+	}
+  }
+  
+  @media (min-width: 576px) {
+	.rounded-nav .nav-link {
+	  border-radius: 50rem !important;
+	}
+  }
+  /* 2 */
+  @media (min-width: 1280px) {
+	.rounded-nav {
+	  border-radius: 50rem !important;
+	}
+  }
+  /* 3 */
+  @media (min-width: 1280px) {
+	.rounded-nav .nav-link {
+	  border-radius: 50rem !important;
+	}
+  }
+
+  @media (min-width: 1920px) {
+	.rounded-nav {
+	  border-radius: 50rem !important;
+	}
+  }
+  
+  @media (min-width: 1920px) {
+	.rounded-nav .nav-link {
+	  border-radius: 50rem !important;
+	}
+  }
+
+  /* With arrow tabs */
+  
+
+  
+  .with-arrow .nav-link.active {
+	position: relative;
+  }
+  
+  .with-arrow .nav-link.active::after {
+	content: '';
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid #2b90d9;
+	position: absolute;
+	bottom: -6px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: block;
+  }
+  
+  /* lined tabs */
+  
+  .lined .nav-link {
+	border: none;
+	border-bottom: 3px solid transparent;
+  }
+  
+  .lined .nav-link:hover {
+	border: none;
+	border-bottom: 3px solid transparent;
+  }
+  
+  .lined .nav-link.active {
+	background: none;
+	color: #555;
+	border-color: #2b90d9;
+  }
+  
+.program_p {
+	font-size: 20px;
+    padding: 10px 65px 32px 65px;
+    line-height: 40px;
+    word-break:keep-all;
+}
+
+.program_h4 {
+	color: #000000;
+    font-size: 20px;
+    padding: 10px 30px 0px 30px;
+    /* font-weight: bold; */
+	line-height: 30px;
+  word-break:keep-all;
+  
+}
+.program_ul {
+	padding-left: 3.5rem;
+  font-size: 15px;
+  padding-bottom: 20px;
+  line-height: 30px;
+	list-style-type: circles;
+}
+
+.program_ul li {
+	font-size: 16px;
+  line-height: 36px;
+  word-break:keep-all;
+  text-indent: -20px;
+  margin-left: 20px;
+}
+.program_topitem {
+	font-size: large;
+  word-break:keep-all;
+}
+
+.program .nav-link{
+	font-size: 20px;
+  word-break:keep-all;
+}
+
+.emp-btn a {
+  color: white;
+}

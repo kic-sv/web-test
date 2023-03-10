@@ -1,0 +1,128 @@
+/* ceomessage css 
+------------------*/
+.our-ceomessage {
+    /* text-align: center; */
+    padding-bottom: 60px;
+    padding-top: 5%;
+    background-color: #f8f9fa;
+    
+}
+
+.our-ceomessage .row h2 {
+    margin-bottom: 33px;
+    font-family: Gotham,Arial,sans-serif;
+    font-size: 36px;
+    line-height: 140%;
+    font-weight: 300;
+    word-break:keep-all;
+}
+
+.our-ceomessage .logo {
+    text-align: center;
+}
+.our-ceomessage .message-item1 img {
+    width: 60%;
+    border-radius: 3%;
+    box-shadow: 0px 0px 8px rgb(0 0 0 / 19%);
+    margin: 10px 0px;
+}
+
+.our-ceomessage .message-item1 h2 {
+    font-size: 30px;
+    text-transform: capitalize;
+    color: #2a2a2a;
+    font-weight: 700;
+    letter-spacing: 0.25px;
+    position: relative;
+    z-index: 2;
+    line-height: 44px;
+    margin-bottom: -5px;
+    text-align: center;
+    word-break:keep-all;
+}
+
+.our-ceomessage .message-item1 p {
+    margin-bottom: 24px;
+    font-family: Gotham,Arial,sans-serif;
+    font-size: 16px;
+    line-height: 200%;
+    font-weight: 300;
+    word-break:keep-all;
+}
+
+
+
+/* ----------------
+mission
+---------------- */
+.our-mission {
+    background-color: #ffffff;
+    position: relative;
+    padding-bottom: 80px;
+}
+
+.our-mission .section-heading {
+    /* padding-bottom: 60px; */
+    padding-top: 5%;
+}
+.our-mission .section-heading h2 {
+    margin-bottom: 33px;
+    font-family: Gotham,Arial,sans-serif;
+    font-size: 36px;
+    line-height: 140%;
+    font-weight: 300;
+    word-break:keep-all;
+}
+
+.our-mission .section-heading span {
+    margin-bottom: 24px;
+    font-family: Gotham,Arial,sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 300;
+    word-break:keep-all;
+}
+
+/* .our-mission .section-heading p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: rgb(107, 118, 132);
+    opacity: 0.5;
+    transform: translate3d(0px, 50px, 0px);
+    animation: 1s ease-in-out 0.5s 1 normal forwards running animation-1x3fevv;
+} */
+.our-mission .mission-items
+
+.our-mission .first-section {
+    text-align: center;
+}
+
+.our-mission .footer-item img {
+    width: 112px;
+    overflow: hidden;
+    text-align: center;
+    /* padding-top: 30px; */
+}
+.our-mission .item {
+    margin: 5%;
+    display: block;
+    margin: auto;
+    align-items: center;
+    padding: 2%;
+
+}
+.our-mission .item h6{
+    margin-bottom: 10px;
+    font-family: Gotham,Arial,sans-serif;
+    font-size: 24px;
+    line-height: 140%;
+    font-weight: 300;
+    word-break:keep-all;
+
+}
+.our-mission .item p{
+    font-size: 16px;
+    line-height: 130%;
+    font-family: Gotham,Arial,sans-serif;
+    word-break:keep-all;
+}
